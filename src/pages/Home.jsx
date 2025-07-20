@@ -23,10 +23,11 @@ const Home = () => {
   const [show, setShow] = useState(false);
   const [currentCaption, setCurrentCaption] = useState("");
   const [currentPostId, setCurrentPostId] = useState("");
-  // const [file, setFile] = useState(null);
   const { state } = useContext(GlobalContext);
   const db = getFirestore();
   const fileInputRef = useRef(null);
+  const CLOUDINARY_URL = import.meta.env.VITE_CLOUDINARY_URL;
+  const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
   const addPost = async (e) => {
     e.preventDefault();
@@ -41,12 +42,9 @@ const Home = () => {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("upload_preset", "social-app-react");
+        formData.append("upload_preset", UPLOAD_PRESET); // ✅ use from env
 
-        const res = await axios.post(
-          "https://api.cloudinary.com/v1_1/dhpqigvzj/upload",
-          formData
-        );
+        const res = await axios.post(CLOUDINARY_URL, formData); // ✅ use from env
         imageUrl = res.data.url;
       }
 
@@ -62,7 +60,7 @@ const Home = () => {
       toast.success("Post submitted!");
       setPostCaption("");
       setFile(null);
-      fileInputRef.current.value = null; // 👉 input field clear
+      fileInputRef.current.value = null;
     } catch (error) {
       console.error("Error uploading post:", error);
       toast.error("Failed to post. Try again.");
