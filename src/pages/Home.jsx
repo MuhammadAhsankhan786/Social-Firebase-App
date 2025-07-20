@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { GlobalContext } from "../Context/Context";
+import { GlobalContext } from "../context/Context";
 import {
   getFirestore,
   collection,

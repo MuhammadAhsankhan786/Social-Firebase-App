@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../Context/Context";
+import { GlobalContext } from "../context/Context";
 import {
   getFirestore,
   collection,

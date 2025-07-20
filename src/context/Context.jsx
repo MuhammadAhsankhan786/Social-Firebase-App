@@ -1,5 +1,6 @@
+// src/context/Context.jsx
 import React, { createContext, useReducer } from "react";
-import { reducer } from "./Reducer"; // Ensure this path is correct
+import { reducer } from "./Reducer"; // ✅ file name starts with capital 'R'
 
 export const GlobalContext = createContext("Initial Value");
 

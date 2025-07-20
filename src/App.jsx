@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { GlobalContext } from "./Context/Context";
+import { GlobalContext } from "./context/Context";
 import CustomRoutes from "./components/CustomRoutes";
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast"; // ✅ import toaster

@@ -4,7 +4,8 @@ import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css"
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import ContextProvider from "./Context/Context.jsx";
+// import ContextProvider from "./context/Context.jsx";
+import ContextProvider from "./context/Context.jsx"; // ✅ small 'c' in context
 
 createRoot(document.getElementById("root")).render(
   <ContextProvider>
