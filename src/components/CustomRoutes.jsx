@@ -5,7 +5,7 @@ import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
-import { GlobalContext } from "../Context/Context";
+import { GlobalContext } from "../context/Context";
 // import Navbar from "./NavBar"; // Importing Navbar
 
 const CustomRoutes = () => {
